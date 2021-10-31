@@ -5,6 +5,7 @@ This class includes a lot of useful functions to process different files
 
 import os
 import fnmatch
+from .exceptions import FileAlreadyExistsException
 
 
 class FileLibrary(object):
@@ -57,10 +58,3 @@ class FileLibrary(object):
 
             if not is_walk:
                 break
-
-
-class FileAlreadyExistsException(Exception):
-
-    def __init__(self, message):
-        self.message = f'File {message} exists. It is impossible to rewrite existing file.'
-        super().__init__(self.message)
