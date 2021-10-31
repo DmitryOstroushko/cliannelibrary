@@ -27,7 +27,7 @@ class FileLibrary(object):
                             prefix='',
                             suffix=''):
         """
-        The method renames masked files in directory define by param 'script_directory'.
+        The method MASSIVE renames masked files in directory define by param 'script_directory'.
         The new names of files consist from numbers (starting with start_number) with prefix or suffix.
 
         For example you need to rename file 'ffffff.txt' to '000103.txt'
