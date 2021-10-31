@@ -28,14 +28,19 @@ class FileLibrary(object):
                             suffix=''):
         """
         The method renames masked files in directory define by param 'script_directory'.
-        The names of files consist from numbers (starting with start_number) with prefix or suffix
+        The new names of files consist from numbers (starting with start_number) with prefix or suffix.
+
+        For example you need to rename file 'ffffff.txt' to '000103.txt'
+        You should invoke the function: rename_file_by_mask(False, '*.txt', 103, 6)
+
         :param is_walk: if True then use os.walk all tree of directories
         :param mask_source: mask of file - sources
-        :param start_number:
-        :param zeros_count:
-        :param prefix:
-        :param suffix:
-        :return:
+        :param start_number: the number for start to name files
+        :param zeros_count: how much digits should be in a new file name
+        :param prefix: prefix for numbers in a file name
+        :param suffix: suffix for numbers in a file name
+        :raises FileAlreadyExistsException if a new file already exists (it protects of rename errors)
+        :return: None
         """
 
         num = start_number
