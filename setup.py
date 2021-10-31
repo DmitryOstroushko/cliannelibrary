@@ -6,7 +6,7 @@ from setuptools import setup
 :copyright: (c) 2021 Dmitry Ostroushko
 """
 
-version = '0.1.1'
+version = '0.1.2.1'
 with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
 
@@ -26,11 +26,13 @@ setup(
 
     url='https://github.com/DmitryOstroushko/cliannelibrary',
 
+    license='Apache License, Version 2.0, see LICENSE file',
+
     packages=['cliannelibrary'],
     install_requires=['os', 'fnmatch'],
 
     classifiers=[
-        'License :: Dmitry Ostroushko',
+        'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
         'Intended Audience :: End Users/Desktop',
         'Intended Audience :: Developers',

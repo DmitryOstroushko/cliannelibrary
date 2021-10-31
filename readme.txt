@@ -7,10 +7,10 @@ USEFUL LINKS:
     3) https://www.youtube.com/watch?v=ji5nkIiGHrU
 
 2. To create dist
-python3 setup.py dist
+python3 setup.py sdist
 
 3. To upload python packages
-twine upload dist/*
+twine upload sdist/*
 
 4. To update package on PyPI
 It is needed to change version in setup.py
