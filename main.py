@@ -7,5 +7,5 @@ from cliannelibrary.filelibrary import FileLibrary
 
 if __name__ == '__main__':
 
-    FileLibrary("/home/clianne/ФОТО/").rename_file_by_mask(False, '*', 20210300, 20210310)
+    FileLibrary("/home/clianne/ФОТО/").rename_file_by_mask(False, '*', 20210300)
 
