@@ -2,7 +2,9 @@
 
 ![PyPI](https://img.shields.io/pypi/v/cliannelibrary?color=orange) ![Python 3.6, 3.7, 3.8](https://img.shields.io/pypi/pyversions/cliannelibrary?color=blueviolet) ![GitHub Pull Requests](https://img.shields.io/github/issues-pr/DmitryOstroushko/cliannelibrary?color=blueviolet) ![License](https://img.shields.io/pypi/l/cliannelibrary?color=blueviolet) ![Forks](https://img.shields.io/github/forks/DmitryOstroushko/cliannelibrary?style=social)
 
-**Clianne Library** - this project is a Python client library which includes useful methods on different topics
+**Clianne Library** - this project is a Python client library which includes useful methods on different topics:
+    - processing XML resources
+    - custom functions for working with files
 
 ## Installation
 
