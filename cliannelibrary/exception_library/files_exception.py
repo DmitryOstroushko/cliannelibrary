@@ -1,6 +1,6 @@
 class FileAlreadyExistsException(Exception):
     """
-    It should be risen if a new file already exists (to protect user from rename errors
+    It should be risen if a new file already exists (to protect user from rename errors)
     """
 
     def __init__(self, message):
