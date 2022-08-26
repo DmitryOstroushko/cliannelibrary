@@ -5,7 +5,7 @@ This class includes a lot of useful functions to process different files
 
 import os
 import fnmatch
-from .exceptions import FileAlreadyExistsException
+from .exception_library.files_exception import FileAlreadyExistsException
 
 
 class FileLibrary(object):
