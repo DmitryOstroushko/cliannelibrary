@@ -236,7 +236,7 @@ class XMLLibrary:
 
     # Единая функция модификации XML структуры
     def do_modify_xml(self, operation: int,
-                            tag: str,
+                            tag: str = None,
                             attrib_dict: dict = None,
                             node_value: str = None,
                             node_kind: int = __NODE_IS_ITSELF) -> None:

@@ -3,10 +3,11 @@
 ![PyPI](https://img.shields.io/pypi/v/cliannelibrary?color=orange) ![Python 3.6, 3.7, 3.8](https://img.shields.io/pypi/pyversions/cliannelibrary?color=blueviolet) ![GitHub Pull Requests](https://img.shields.io/github/issues-pr/DmitryOstroushko/cliannelibrary?color=blueviolet) ![License](https://img.shields.io/pypi/l/cliannelibrary?color=blueviolet) ![Forks](https://img.shields.io/github/forks/DmitryOstroushko/cliannelibrary?style=social)
 
 **Clianne Library** - this project is a Python client library which includes useful methods on different topics:  
-    ```
-    - processing XML resources  
-    - custom functions for working with files
-    ```
+
+- processing XML resources  
+
+- custom functions for working with files  
+
 
 ## Installation
 
@@ -23,13 +24,26 @@ pip install https://github.com/DmitryOstroushko/cliannelibrary/archive/main.zip
 
 ## Usage
 
-You can generate a token for clubhouse by going to the account section and generating a new token
+1) XML processing  
+You can create XMLLibrary instance based on XML file, and then use it to modify XML structure with operarions ADD, MODIFY and DELETE
 
 ```python
-TOKEN = os.getenv('TOKEN')
+xml_structure = XMLLibrary('file.xml')
 
-club_house_session = ClubHouse(TOKEN, 'v3')
-club_house = club_house_session.get_api()
+xml_structure.set_xml_node_to_modify(tag='xml_tag',
+                                     attrib_dict={'attr_1': 'test_1',
+                                                  'attr_2': 'test_2'}
+                                     node_value='text'
+                                    )
+xml_structure.do_modify_xml(3)
+```
+
+2) You can rename files to digital-names with mask-smaple
+
+```python
+mask: str ='*'
+start_number: int = 20210300
+FileLibrary().rename_file_by_mask(False, mask, start_number)
 ```
 
 ## Example
