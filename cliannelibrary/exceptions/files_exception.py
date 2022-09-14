@@ -1,3 +1,5 @@
+__all__ = ['FileAlreadyExistsException']
+
 class FileAlreadyExistsException(Exception):
     """
     It should be risen if a new file already exists (to protect user from rename errors).

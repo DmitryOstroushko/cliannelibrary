@@ -48,9 +48,11 @@ The class XMLLibrary implements a logic to process XML files:
     Doc: https://digitology.tech/docs/python_3/library/xml.etree.elementtree.html
 """
 
+__all__ = ['XMLLibrary']
+
 from typing import List, Final
 import xml.etree.ElementTree as ET
-from .exception_library.xml_exception import XMLNodeNotExistException, \
+from .exceptions import XMLNodeNotExistException, \
                                                 XMLEmptyNodeListException, \
                                                 XMLManyNodeInListException, \
                                                 XMLInvalidOperationException, \
@@ -69,12 +71,12 @@ class XMLLibrary:
         xml_node_to_modify: the node to modify 
     """
 
-    __NODE_IS_ITSELF: Final = 1
-    __NODE_IS_CHILD: Final = 2
+    __NODE_IS_ITSELF: Final[int] = 1
+    __NODE_IS_CHILD: Final[int] = 2
 
-    __OPERATION_ADD: Final = 1
-    __OPERATION_MODIFY: Final = 2
-    __OPERATION_DELETE: Final = 3
+    __OPERATION_ADD: Final[int] = 1
+    __OPERATION_MODIFY: Final[int] = 2
+    __OPERATION_DELETE: Final[int] = 3
 
     def __init__(self, xml_file_name: str) -> None:
         self.xml_file: str = xml_file_name
@@ -151,7 +153,7 @@ class XMLLibrary:
 
 
     # Сохранить XML в файд
-    def xml_tree_to_save(self, xml_file_name: str) -> None:
+    def do_save_xml_tree(self, xml_file_name: str) -> None:
         self.xml_tree.write(xml_file_name)
 
 
@@ -170,7 +172,7 @@ class XMLLibrary:
         """
         To set the node to modify by the node tag, the attributes (by dictionary) and the node value
         """
-        self.xml_node_to_modify = self.__get_xml_node_by_params(tag, attrib_dict, node_value)
+        self.xml_node_to_modify = self.__get_xml_node_by_params(self.xml_tree_root, tag, attrib_dict, node_value)
     
 
     # Добавить узел в XML структуру
@@ -178,13 +180,15 @@ class XMLLibrary:
                             tag: str,
                             attrib_dict: dict,
                             node_value: str,
-                            node_kind: int) -> None:
+                            node_kind: int = __NODE_IS_ITSELF) -> None:
 
         new_tag: ET.Element = ET.Element(tag)
         if attrib_dict is not None:
             new_tag.attrib = attrib_dict
         if node_value is not None:
             new_tag.text = node_value
+        print(type(self))
+        print(type(self.xml_node_to_modify))
         self.xml_node_to_modify.append(new_tag)
 
 
@@ -217,7 +221,7 @@ class XMLLibrary:
                                tag: str,
                                attrib_dict: dict,
                                node_value: str,
-                               node_kind: int) -> None:
+                               node_kind: int = __NODE_IS_ITSELF) -> None:
 
         # Изменить узел to_modify
         self.xml_node_to_modify.tag = tag
@@ -225,13 +229,6 @@ class XMLLibrary:
             self.xml_node_to_modify.attrib = attrib_dict
         if node_value is not None:
             self.xml_node_to_modify.text = node_value
-
-
-    # Список функций для выполнения операций в XML структуре
-    function_operation: List(function) = [__add_node_function,
-                                          __del_node_function,
-                                          __modify_node_function
-                                         ]
 
 
     # Единая функция модификации XML структуры
@@ -266,5 +263,13 @@ class XMLLibrary:
         # Проверить соответствие между типом узла и операцией
         __do_check_operation_constraint(operation, node_kind)
 
-        self.function_operation[operation - 1](tag, attrib_dict, node_value, node_kind)
+        # Список функций для выполнения операций в XML структуре
+        function_operation: List = [self.__add_node_function,
+                                    self.__del_node_function,
+                                    self.__modify_node_function
+                                ]
+
+#        if operation == self.__OPERATION_ADD:
+#            self.add_node_function(tag, attrib_dict, node_value, node_kind)
+        function_operation[operation - 1](tag, attrib_dict, node_value, node_kind)
 

@@ -1,3 +1,11 @@
+__all__ = ['XMLNodeNotExistException', \
+            'XMLEmptyNodeListException', \
+            'XMLManyNodeInListException', \
+            'XMLInvalidOperationException', \
+            'XMLInvalidNodeKindException', \
+            'XMLВiscrepancyNodeKindOperationException']
+
+
 from platform import node
 import xml.etree.ElementTree as ET
 

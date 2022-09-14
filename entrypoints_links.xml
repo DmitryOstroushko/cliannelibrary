@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entrypoint_links>
+	<heimdall>
+        <link>https://banxdevpcore.geniusto.co.uk/heimdall/test/</link>
+    </heimdall>
+    <psi>
+        <link>http://cnrldevpcore.geniusto.co.uk/psi/test/</link>
+    </psi>
+    <documentation>
+        <link comment="Общая информация">
+            https://jira-geniusto.atlassian.net/wiki/spaces/DOC/pages/945259584
+        </link>
+        <link comment="Примеры запросов">
+            https://jira-geniusto.atlassian.net/wiki/spaces/ds/pages/395903349/entrypoint+requests
+        </link>
+    </documentation>
+</entrypoint_links>

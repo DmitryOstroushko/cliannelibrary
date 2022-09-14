@@ -10,7 +10,7 @@ USEFUL LINKS:
 python3 setup.py sdist
 
 3. To upload python packages
-twine upload sdist/*
+twine upload dist/*
 
 4. To update package on PyPI
 It is needed to change version in setup.py

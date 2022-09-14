@@ -3,9 +3,11 @@ This is a main class for FileLibrary class.
 This class includes a lot of useful functions to process different files
 """
 
+__all__ = ['FileLibrary']
+
 import os
 import fnmatch
-from .exception_library.files_exception import FileAlreadyExistsException
+from .exceptions import FileAlreadyExistsException
 
 
 class FileLibrary(object):

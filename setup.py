@@ -6,7 +6,7 @@ from setuptools import setup
 :copyright: (c) 2021 Dmitry Ostroushko
 """
 
-version = '0.1.2.2'
+version = '0.1.3.2'
 with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
 
@@ -18,7 +18,7 @@ setup(
     author_email='dmitrlylianne@gmail.com',
 
     description=(
-        u'Python module with a lof of complex useful utilities.'
+        u'Python module includes useful utilities for XML processing and woring with files.'
         u'Clianne Libraries'
     ),
     long_description=long_description,
@@ -29,7 +29,7 @@ setup(
     license='Apache License, Version 2.0, see LICENSE file',
 
     packages=['cliannelibrary'],
-    install_requires=['os', 'fnmatch'],
+    install_requires=[],
 
     classifiers=[
         'License :: OSI Approved :: Apache Software License',

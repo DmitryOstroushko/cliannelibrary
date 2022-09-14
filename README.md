@@ -24,9 +24,9 @@ pip install https://github.com/DmitryOstroushko/cliannelibrary/archive/main.zip
 
 1) XML processing  
 You can create XMLLibrary instance based on XML file, and then use it to modify XML structure with operarions:  
-1. ADD  
-2. MODIFY  
-3. DELETE  
+- ADD  
+- MODIFY  
+- DELETE  
 
 ```python
 xml_structure = XMLLibrary('file.xml')
